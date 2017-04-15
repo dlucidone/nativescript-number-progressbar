@@ -1,95 +1,130 @@
-# Develop a NativeScript plugin now (w/ TypeScript)
+[![npm](https://img.shields.io/npm/v/nativescript-number-progressbar.svg)](https://www.npmjs.com/package/nativescript-number-progressbar)
+[![npm](https://img.shields.io/npm/l/nativescript-number-progressbar.svg)](https://www.npmjs.com/package/nativescript-number-progressbar)
+[![npm](https://img.shields.io/npm/dt/nativescript-number-progressbar.svg?label=npm%20d%2fls)](https://www.npmjs.com/package/nativescript-number-progressbar)
 
-## Getting started
+# Nativescript-Number-ProgressBar 
+NativeScript Number ProgressBar provides simple ProgressBar with styling.Feedbacks and PRs are most Welcome.
 
-1. `git clone https://github.com/NathanWalker/nativescript-plugin-seed.git myplugin`
-2. `cd myplugin`
-3. `npm run postclone`
-4. `npm run setup`
-5. Get to work.
+## Demo
 
-This seed expands on several things [presented here](http://developer.telerik.com/featured/creating-nativescript-plugins-in-typescript/).
+
+ | 
+---------- | 
+![alt text](screenshots/demo.gif) | 
+
+#### Native Libraries: 
+Android | 
+---------- | 
+[daimajia/NumberProgressBar](https://github.com/daimajia/NumberProgressBar) 
+
+## Installation
+From your command prompt/termial go to your app's root folder and execute:
+
+`npm i nativescript-number-progressbar --save`
 
 ## Usage
+#### XML:
+```XML
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:NumberProgressBar="nativescript-number-progressbar" loaded="pageLoaded"> 
+    <Page.actionBar>
+      <ActionBar title="Nativescript Number ProgressBar" />
+  </Page.actionBar>
+  <StackLayout padding="10">
+      <NumberProgressBar:NumberProgressBar  id="sb" marginTop="20" />
+        <NumberProgressBar:NumberProgressBar  id="sb1" marginTop="30"  progress_text_size="30" progress_text_color="#2BAB42" progress_unreached_bar_height="5" progress_reached_bar_height="10" progress_unreached_color="#ededed" progress_reached_color="#2BAB42" />
+       <NumberProgressBar:NumberProgressBar  id="sb2" marginTop="30"  progress_text_size="40" progress_text_color="#F0D812" progress_unreached_bar_height="10" progress_reached_bar_height="20" progress_unreached_color="#ededed" progress_reached_color="#F0D812"  />
+       <NumberProgressBar:NumberProgressBar  id="sb3" marginTop="30"  progress_text_size="50" progress_text_color="#F43B5A" progress_unreached_bar_height="20" progress_reached_bar_height="40" progress_unreached_color="#ededed" progress_reached_color="#F43B5A"  />
+       <NumberProgressBar:NumberProgressBar  id="sb4" marginTop="30"  progress_text_size="60" progress_text_color="#D726EC" progress_unreached_bar_height="20" progress_reached_bar_height="40" progress_unreached_color="#34EC1A" progress_reached_color="#D726EC"  />
 
-The seed is prepared to allow you to test and try out your plugin via the `demo` folder.
-Additionally it provides a proper `.gitignore` to keep GitHub tidy as well as `.npmignore` to ensure everyone is happy when you publish your plugin via npm.
-
-### Linking to CocoaPod or Android Arsenal plugins
-
-You will want to create these folders and files in the root:
-
-```
-platforms --
-  ios --
-    Podfile
-  android --
-    include.gradle
-```
-
-Doing so will open up those native apis to your plugin :)
-
-Take a look at these existing plugins for how that can be done very simply:
-
-* [nativescript-cardview](https://github.com/bradmartin/nativescript-cardview/tree/master/platforms)
-* [nativescript-floatingactionbutton](https://github.com/bradmartin/nativescript-floatingactionbutton/tree/master/platforms)
-
-### Typical development workflow:
-
-1. Make changes to plugin files
-2. Make changes in `demo` that would test those changes out
-3. `npm run demo.ios` or `npm run demo.android`  **(must be run from the root directory)**
-
-Those `demo` tasks are just general helpers. You may want to have more granular control on the device and/or emulator you want to run. For that, you can just run things the manual way:
+        
+  </StackLayout>
+</Page>
 
 ```
-cd demo
 
-// when developing, to ensure the latest code is built into the demo, it's a guarantee to remove the plugin and add it back
-tns plugin remove nativescript-submit-button
-tns plugin add ..
+### TS:
+```TS
 
-// manual platform adds
-tns platform add ios
-// and/or
-tns platform add android
-```
-
-Then use any of the available options from the `tns` command line:
-
-* [Emulate your project](https://github.com/NativeScript/nativescript-cli#emulate-your-project)
-* [Run your project](https://github.com/NativeScript/nativescript-cli#run-your-project)
-* [Full list of commands](https://github.com/NativeScript/nativescript-cli#the-commands)
-
-## Unittesting
-This plugin automatically adds Jasmine-based unittest support to your plugin.
-Open `demo/app/tests/tests.js` and adjust its contents.
-
-You can read more about this topic [here](https://docs.nativescript.org/tooling/testing).
-
-Once you're ready to test your plugin's API execute one of these commands in the plugin root:
+import {NumberProgressBar} from 'nativescript-number-progressbar';
+private npb: NumberProgressBar;
+this.npb = <NumberProgressBar>mainPage.getViewById('sb');
+this.npb.incrementProgressBy(1);
 
 ```
-npm run test.ios
-npm run test.android
-```
 
-## Publish
 
-When you have everything ready to publish:
+## Attributes
 
-* Bump the version number in `package.json`
-* `npm run build` - **very important** - ensure the latest is built **before** you publish
-* `npm publish`
 
-## Contributing - Want to make the seed better?
+There are several attributes you can set:
 
-Or at least help keep it up to date with NativeScript releases, which would be excellent.
+![](http://ww2.sinaimg.cn/mw690/610dc034jw1efyttukr1zj20eg04bmx9.jpg)
 
-```
-npm install -g typescript  // if you don't already have it
-git clone https://github.com/NathanWalker/nativescript-plugin-seed
-cd nativescript-plugin-seed
+The **reached area** and **unreached area**:
 
-// Improve!
-```
+* color
+* height 
+
+The **text area**:
+
+* color
+* text size
+* visibility
+* distance between **reached area** and **unreached area**
+
+The **bar**:
+
+* max progress
+* current progress
+
+**progress_text_size - (int)** - *optional*
+
+Attribute to specify the size of text in Progress Bar.
+
+**progress_text_color - (color string)** - *optional*
+
+Attribute to specify the color of text in Progress Bar.
+
+**progress_unreached_color - (color string)** - *optional*
+
+Attribute to specify the color of progress unreached area in Progress Bar.
+
+**progress_reached_color - (color string)** - *optional*
+
+Attribute to specify the color of progress reached area in Progress Bar.
+
+**progress_unreached_bar_height - (int)** - *optional*
+
+Attribute to specify the height of unreached Progress Bar.
+
+**progress_reached_bar_height - (int)** - *optional*
+
+Attribute to specify the height of reached Progress Bar.
+
+
+## Methods
+
+**incrementProgressBy(int)**
+
+Increment the progress bar with any value.
+
+**getProgress()**
+
+To know the current progress bar value at a time.
+
+**setProgress(int)**
+
+To set the progress bar value.
+
+**getProgressMax()**
+
+To know the progress bar maximum value.
+
+**setProgressMax(int)**
+
+To set the progress bar maximum value.
+
+
+
