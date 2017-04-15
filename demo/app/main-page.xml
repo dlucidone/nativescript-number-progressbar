@@ -1,0 +1,19 @@
+
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:NumberProgressBar="nativescript-number-progressbar" loaded="pageLoaded"> 
+    <Page.actionBar>
+      <ActionBar title="Nativescript Number ProgressBar" />
+  </Page.actionBar>
+  <StackLayout height="100%" width="100%" padding="10">
+    <!--<Label text="testing" class="t-20 text-center c-black" textWrap="true"/>-->
+      <NumberProgressBar:NumberProgressBar  id="sb" marginTop="20" />
+        <NumberProgressBar:NumberProgressBar  id="sb1" marginTop="30"  progress_text_size="30" progress_text_color="#2BAB42" progress_unreached_bar_height="5" progress_reached_bar_height="10" progress_unreached_color="#ededed" progress_reached_color="#2BAB42" />
+       <NumberProgressBar:NumberProgressBar  id="sb2" marginTop="30"  progress_text_size="40" progress_text_color="#F0D812" progress_unreached_bar_height="10" progress_reached_bar_height="20" progress_unreached_color="#ededed" progress_reached_color="#F0D812"  />
+       <NumberProgressBar:NumberProgressBar  id="sb3" marginTop="30"  progress_text_size="50" progress_text_color="#F43B5A" progress_unreached_bar_height="20" progress_reached_bar_height="40" progress_unreached_color="#ededed" progress_reached_color="#F43B5A"  />
+       <NumberProgressBar:NumberProgressBar  id="sb4" marginTop="30"  progress_text_size="60" progress_text_color="#D726EC" progress_unreached_bar_height="20" progress_reached_bar_height="40" progress_unreached_color="#34EC1A" progress_reached_color="#D726EC"  />
+
+        
+  </StackLayout>
+</Page>
+

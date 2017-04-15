@@ -1,0 +1,31 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.repeaterDemo",
+    "tns-android": {
+      "version": "2.5.0"
+    }
+  },
+  "scripts": {
+    "build": "cd /Users/Dlucidone/Desktop/nativescript-submit-button/nativescript-submit-button && tsc&& tns plugin remove nativescript-submit-button && tns plugin add /Users/Dlucidone/Desktop/nativescript-submit-button/nativescript-submit-button && tns platform remove android && tns platform add android && tns livesync android --watch",
+    "prepare": "tns plugin remove nativescript-number-progressbar && tns plugin add /Users/Dlucidone/Desktop/nativescript-submit-button/nativescript-number-progressbar",
+    "run": " tns platform remove android && tns platform add android && tns livesync android --watch"
+  },
+  "dependencies": {
+    "nativescript-number-progressbar": "file:///Users/Dlucidone/Desktop/nativescript-submit-button/nativescript-number-progressbar",
+    "nativescript-theme-core": "~1.0.2",
+    "tns-core-modules": "2.5.1"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.23.1",
+    "babel-types": "6.23.0",
+    "babylon": "6.15.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "~0.3.5",
+    "typescript": "~2.1.0"
+  }
+}

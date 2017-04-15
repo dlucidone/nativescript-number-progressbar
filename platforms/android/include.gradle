@@ -1,0 +1,23 @@
+android {
+    productFlavors {
+        "nativescriptnumberprogressbar" {
+            dimension "nativescriptnumberprogressbar"
+        }
+    }
+}
+// repositories {
+//     jcenter()
+//     maven { url "https://jitpack.io" }
+// }
+allprojects {
+	repositories {
+		maven { url "https://jitpack.io" }
+	}
+}
+dependencies {
+    //  compile "me.spark:submitbutton:1.0.1"
+    // compile 'noman.weekcalendar:weekcalendar:1.0.6'
+    // compile  'com.github.vatsaldesai92:MyDynamicCalendarLibrary:1.0.1'
+    // compile 'sun.bob:mcalendarview:1.0.0'
+     compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+}
